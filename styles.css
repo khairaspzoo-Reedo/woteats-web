@@ -1,0 +1,55 @@
+
+:root { --ink:#161616; --tomato:#ff2a12; --yolk:#ffcc00; --muted:#5c564e; --card:#fff; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; background:#fff; color:var(--ink); font-family:"Plus Jakarta Sans","Avenir Next","Segoe UI",sans-serif; font-weight:600; line-height:1.45; }
+h1,h2,h3,h4 { font-family:Fredoka,"Plus Jakarta Sans",sans-serif; font-weight:700; letter-spacing:-0.03em; line-height:.98; margin:0; }
+img { max-width:100%; display:block; }
+a { color:inherit; }
+.wrap { width:min(1120px, calc(100% - 32px)); margin:0 auto; }
+.bar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:3px solid var(--ink); display:flex; gap:18px; align-items:center; padding:10px 16px; }
+.bar img { height:48px; width:auto; }
+nav { display:flex; flex-wrap:wrap; gap:8px 14px; font-size:14px; font-weight:800; margin-left:auto; }
+nav a { text-decoration:none; }
+nav a:hover { color:var(--tomato); }
+.btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 18px; border-radius:999px; border:3px solid var(--ink); background:var(--tomato); color:#fff; font-weight:800; text-decoration:none; box-shadow:3px 3px 0 var(--ink); }
+.btn.yolk { background:var(--yolk); color:var(--ink); }
+.btn.ink { background:var(--ink); color:#fff; }
+.btn.ghost { background:#fff; color:var(--ink); }
+.hero { display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; padding:40px 0 8px; }
+.kicker { font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:#c41200; margin:0 0 8px; }
+h1 { font-size:clamp(2.6rem, 6vw, 4.6rem); }
+.lede { font-size:1.12rem; color:var(--muted); max-width:40rem; }
+.row { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+.card { border:3px solid var(--ink); border-radius:28px; background:#fff; box-shadow:6px 6px 0 var(--ink); overflow:hidden; }
+.pad { padding:18px 18px 20px; }
+.photo { width:100%; height:240px; object-fit:cover; background:#f6f1ea; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+section { padding:28px 0; }
+.search { display:flex; gap:8px; margin-top:18px; background:#fff; border:3px solid var(--ink); border-radius:999px; padding:6px; box-shadow:4px 4px 0 var(--yolk); }
+.search input { flex:1; border:0; min-height:44px; padding:0 14px; font:inherit; font-weight:700; outline:none; background:transparent; }
+.search button { border:0; }
+.quote { font-family:Fredoka,sans-serif; font-size:1.35rem; line-height:1.15; }
+.muted { color:var(--muted); }
+.steps { counter-reset:step; display:grid; gap:12px; }
+.steps li { list-style:none; border:3px solid var(--ink); border-radius:22px; padding:14px 14px 14px 64px; position:relative; background:#fff; }
+.steps { margin:0; padding:0; }
+.steps li::before { counter-increment:step; content:counter(step); position:absolute; left:12px; top:12px; width:38px; height:38px; border-radius:50%; background:var(--yolk); border:3px solid var(--ink); display:grid; place-items:center; font-family:Fredoka,sans-serif; font-weight:700; }
+footer { border-top:3px solid var(--ink); margin-top:20px; padding:28px 0 48px; }
+.foot { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:18px; }
+.foot a { display:block; text-decoration:none; font-weight:800; margin:6px 0; }
+.foot a:hover { color:var(--tomato); }
+.pill { display:inline-block; border:2px solid var(--ink); border-radius:999px; padding:4px 10px; font-size:13px; font-weight:800; background:var(--yolk); }
+table { width:100%; border-collapse:separate; border-spacing:0; }
+th,td { text-align:left; padding:12px; border-bottom:2px solid #16161622; vertical-align:top; }
+form.ask { display:grid; gap:10px; }
+label { font-size:14px; font-weight:800; display:grid; gap:4px; }
+input,select,textarea { min-height:48px; border:3px solid var(--ink); border-radius:16px; padding:8px 12px; font:inherit; font-weight:700; background:#fff; }
+textarea { min-height:110px; }
+@media (max-width:860px) {
+  .hero,.grid2,.grid3,.foot { grid-template-columns:1fr; }
+  .bar { flex-wrap:wrap; }
+  nav { margin-left:0; width:100%; }
+  .photo { height:200px; }
+}
